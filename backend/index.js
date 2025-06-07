@@ -6,17 +6,13 @@ const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/api', translateRoutes);  // e.g., POST /api/translate
+app.use('/api', translateRoutes);
 
-// Error handler
 app.use(errorHandler);
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
