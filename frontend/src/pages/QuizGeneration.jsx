@@ -41,7 +41,7 @@ export default function QuizGeneration() {
     setAnswers({});
 
     try {
-      const response = await fetch("http://localhost:3000/api/generate-quiz", {
+      const response = await fetch("https://cwb-ha2t.onrender.com/api/generate-quiz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic, language }),
