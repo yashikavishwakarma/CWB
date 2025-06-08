@@ -56,7 +56,7 @@ export default function AIBuddyChat() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/buddy-chat", {
+      const res = await fetch("https://cwb-ha2t.onrender.com/api/buddy-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: userMessage.text, language }),
