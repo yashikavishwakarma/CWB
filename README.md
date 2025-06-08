@@ -1,4 +1,4 @@
-<h1>TripleW - Wherever, Whenever, Whatever</h1>
+<h1>TripleW Learn - Wherever, Whenever, Whatever</h1>
 
 <p><em>Learn wherever you are, whenever you want, whatever you need.</em></p>
 
@@ -24,11 +24,11 @@
 
 <h2 id="project-overview">Project Overview</h2>
 <p>
-  TripleW (Wherever, Whenever, Whatever) is an AI-powered learning platform designed to make education accessible, engaging, and culturally relevant for students across Southeast Asia.
+  TripleW Learn (Wherever, Whenever, Whatever) is an AI-powered learning platform designed to make education accessible, engaging, and culturally relevant for students across Southeast Asia.
   It breaks language barriers by translating and localizing content into native SEA languages, enabling learners to connect deeply with educational materials tailored to their cultural contexts.
 </p>
 <p>
-  Focused on asynchronous learning, TripleW provides multiple ways to consume knowledge—from translating PDFs and YouTube video transcripts to generating quizzes and offering AI-powered personalized assistance.
+  Focused on asynchronous learning, TripleW Learn provides multiple ways to consume knowledge—from translating PDFs and YouTube video transcripts to generating quizzes and offering AI-powered personalized assistance.
 </p>
 
 <h2 id="features">Features</h2>
@@ -42,7 +42,7 @@
 <h2 id="problem-statement">Problem Statement</h2>
 <p>
   Southeast Asia’s diverse cultural and linguistic landscape presents challenges for conventional online learning platforms, which often lack localization and cultural relevance.
-  TripleW addresses these gaps by leveraging AI to dynamically localize educational content, creating immersive and accessible asynchronous learning experiences tailored specifically to the SEA region.
+  TripleW Learn addresses these gaps by leveraging AI to dynamically localize educational content, creating immersive and accessible asynchronous learning experiences tailored specifically to the SEA region.
 </p>
 <p>
   This project aligns with the hackathon’s goal of improving accessibility, engagement, and cultural resonance through AI-driven localization.
@@ -90,7 +90,7 @@ npm start
 </ul>
 
 <h2 id="live-demo">Live Demo</h2>
-<p>Experience TripleW live: <a href="https://cwb-frontend-1.onrender.com" target="_blank" rel="noopener noreferrer">https://cwb-frontend-1.onrender.com</a></p>
+<p>Experience TripleW Learn live: <a href="https://cwb-frontend-1.onrender.com" target="_blank" rel="noopener noreferrer">https://cwb-frontend-1.onrender.com</a></p>
 
 <h2 id="contributing">Contributing</h2>
 <p>Contributions are always welcome! To contribute:</p>
@@ -108,6 +108,5 @@ npm start
 <h2 id="contact">Contact</h2>
 <p>
   <strong>Yashika Vishwakarma</strong><br />
-  GitHub: <a href="https://github.com/yashikavishwakarma" target="_blank" rel="noopener noreferrer">yashikavishwakarma</a><br />
-  Email: yashika.email@example.com <!-- Please replace with your actual email -->
+  GitHub: <a href="https://github.com/yashikavishwakarma" target="_blank" rel="noopener noreferrer">yashikavishwakarma</a>
 </p>
