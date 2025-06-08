@@ -25,27 +25,40 @@ const languageOptions = [
   { code: 'id', label: 'Indonesian' },
 ];
 
+// Utility function to extract video ID from YouTube URL
+function extractVideoId(url) {
+  const regex =
+    /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?|watch)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+}
+
 export default function YoutubeTranslate() {
-  const [videoId, setVideoId] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
   const [language, setLanguage] = useState('');
   const [translatedTranscript, setTranslatedTranscript] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const handleTranslate = async () => {
+    const videoId = extractVideoId(videoUrl);
+
     if (!videoId || !language) {
-      setError('Please enter a YouTube video ID and select a language.');
+      setError('Please enter a valid YouTube video link and select a language.');
       return;
     }
+
     setLoading(true);
     setError('');
     setTranslatedTranscript([]);
+
     try {
       const data = await translateYoutubeTranscript(videoId, language);
       setTranslatedTranscript(data.translatedTranscript);
     } catch (err) {
       setError(err.message);
     }
+
     setLoading(false);
   };
 
@@ -65,13 +78,13 @@ export default function YoutubeTranslate() {
       <div className="space-y-6 mb-8">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            YouTube Video ID
+            YouTube Video Link
           </label>
           <input
             type="text"
-            placeholder="Enter YouTube Video ID (e.g., dQw4w9WgXcQ)"
-            value={videoId}
-            onChange={(e) => setVideoId(e.target.value)}
+            placeholder="Paste full YouTube link (e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)"
+            value={videoUrl}
+            onChange={(e) => setVideoUrl(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all"
           />
         </div>
@@ -164,8 +177,7 @@ export default function YoutubeTranslate() {
       {/* Help Text */}
       <div className="mt-6 text-sm text-gray-500">
         <p>
-          Tip: The video ID is the part after "v=" in a YouTube URL. For example,
-          in "youtube.com/watch?v=dQw4w9WgXcQ", the ID is "dQw4w9WgXcQ".
+          Tip: You can paste any full YouTube URL. We will extract the video ID and get the transcript in Your Prefferd language.
         </p>
       </div>
     </div>
