@@ -1,7 +1,7 @@
 
 
 export async function translateYoutubeTranscript(videoId, targetLanguage) {
-  const response = await fetch('http://localhost:3000/api/translate', {
+  const response = await fetch('https://cwb-ha2t.onrender.com/api/translate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
