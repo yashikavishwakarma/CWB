@@ -1,4 +1,4 @@
-// src/api/youtubeTranslate.js
+
 
 export async function translateYoutubeTranscript(videoId, targetLanguage) {
   const response = await fetch('http://localhost:3000/api/translate', {
@@ -14,5 +14,5 @@ export async function translateYoutubeTranscript(videoId, targetLanguage) {
     throw new Error(errorData.error || 'YouTube translation failed');
   }
 
-  return response.json(); // { translatedTranscript: [...] }
+  return response.json(); 
 }

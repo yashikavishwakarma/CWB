@@ -1,4 +1,3 @@
-// frontend/src/api/pdfTranslate.js
 
 export async function translatePdf(file, language) {
   const formData = new FormData();
@@ -15,5 +14,5 @@ export async function translatePdf(file, language) {
     throw new Error(errorData.error || 'PDF translation failed');
   }
 
-  return response.json(); // { translatedText }
+  return response.json(); 
 }

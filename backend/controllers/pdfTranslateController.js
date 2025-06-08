@@ -13,13 +13,10 @@ async function translatePdf(req, res, next) {
   }
 
   try {
-    // Extract text from uploaded PDF buffer
     const text = await extractTextFromPdf(pdfBuffer);
 
-    // Translate the extracted text
     const translatedText = await translateText(text, targetLanguage);
 
-    // ✅ Do not save to DB, just return the response
     res.json({ translatedText });
   } catch (error) {
     next(error);

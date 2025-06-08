@@ -44,7 +44,6 @@ Return ONLY the JSON array, no extra text. The questions should be in ${language
 
     const quizTextRaw = response.data.choices[0].message.content;
 
-    // Extract JSON array substring from the response text
     const jsonMatch = quizTextRaw.match(/\[.*\]/s);
 
     if (!jsonMatch) {
@@ -54,7 +53,6 @@ Return ONLY the JSON array, no extra text. The questions should be in ${language
 
     const quizJsonStr = jsonMatch[0];
 
-    // Optionally parse here to verify
     let quizJson;
     try {
       quizJson = JSON.parse(quizJsonStr);
@@ -63,7 +61,7 @@ Return ONLY the JSON array, no extra text. The questions should be in ${language
       return res.status(500).json({ error: "Failed to parse quiz JSON" });
     }
 
-    res.json({ quiz: quizJson });  // Send parsed JSON object to frontend
+    res.json({ quiz: quizJson }); 
 
   } catch (error) {
     console.error("Error generating quiz:", error.response?.data || error.message);

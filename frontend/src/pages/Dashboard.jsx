@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -17,19 +16,16 @@ export default function Dashboard() {
         try {
         setLoading(true);
 
-        // ✅ Dummy stats (no API calls)
         const dummyData = {
             quizStats: { total: 10, correct: 7 },
             translationStats: { translatedDocs: 4 },
             videoStats: { summaries: 3 }
         };
 
-        // Simulate delay
         await new Promise((res) => setTimeout(res, 500));
 
-        // ✅ Set state safely
         setStats(dummyData);
-        setError(null); // clear any previous error
+        setError(null); 
         } catch (err) {
         console.error(err);
         setError('Failed to load dashboard data');

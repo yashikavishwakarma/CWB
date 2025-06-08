@@ -9,10 +9,8 @@ const buddyChat = async (req, res) => {
   }
 
   try {
-    // Step 1: Translate question to English (or base language)
     const translatedQuestion = await translateText(question, "en");
 
-    // Step 2: Send to Azure OpenAI chat API
     const response = await axios.post(
       `${process.env.AZURE_OPENAI_ENDPOINT}openai/deployments/${process.env.AZURE_OPENAI_DEPLOYMENT_NAME}/chat/completions?api-version=${process.env.AZURE_OPENAI_API_VERSION}`,
       {
@@ -39,10 +37,8 @@ const buddyChat = async (req, res) => {
 
     const answerInEnglish = response.data.choices[0].message.content;
 
-    // Step 3: Translate answer back to user's language
     const localizedAnswer = await translateText(answerInEnglish, language);
 
-    // Step 4: Respond with localized answer
     res.json({ answer: localizedAnswer });
 
   } catch (error) {

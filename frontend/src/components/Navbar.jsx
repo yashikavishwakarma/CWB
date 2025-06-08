@@ -6,7 +6,6 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Matching landing page gradient */}
           <Link 
             to="/" 
             className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 transition-all duration-300"
@@ -14,7 +13,6 @@ export default function Navbar() {
             TripleW Learn
           </Link>
 
-          {/* Navigation Links */}
           <div className="flex items-center space-x-6">
             <SignedIn>
               <Link 
