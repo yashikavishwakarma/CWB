@@ -4,7 +4,7 @@ export async function translatePdf(file, language) {
   formData.append('pdfFile', file);
   formData.append('targetLanguage', language);
 
-  const response = await fetch('http://localhost:3000/api/translate-pdf', {
+  const response = await fetch('https://cwb-ha2t.onrender.com/api/translate-pdf', {
     method: 'POST',
     body: formData,
   });
