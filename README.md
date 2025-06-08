@@ -6,7 +6,7 @@
 
 
 <p>
-  <a href="https://cwb-frontend-1.onrender.com" target="_blank" rel="noopener noreferrer" style="font-weight: bold; color: #0366d6;">
+  <a href="https://cwb-frontend-2.onrender.com" target="_blank" rel="noopener noreferrer" style="font-weight: bold; color: #0366d6;">
     Live Demo
   </a>
 </p>
