@@ -10,17 +10,15 @@ import AIBuddy from './pages/AIBuddy';
 import QuizGeneration from './pages/QuizGeneration';
 import Dashboard from './pages/Dashboard';
 
-import RequireAuth from './components/RequireAuth';  // import the new wrapper
+import RequireAuth from './components/RequireAuth'; 
 
 function App() {
   return (
     <Router>
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Public route */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          {/* Wrap protected routes inside RequireAuth */}
           <Route
             path="/pdf-translation"
             element={
