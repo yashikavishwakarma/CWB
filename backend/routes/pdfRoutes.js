@@ -1,7 +1,7 @@
 // backend/routes/pdfRoutes.js
 const express = require('express');
 const router = express.Router();
-const Pdf = require('../models/Pdf');
+const Pdf = require('../models/TranslatedPdf');
 
 router.post('/save', async (req, res) => {
   const { userId } = req.auth;

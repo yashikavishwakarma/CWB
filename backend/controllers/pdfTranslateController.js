@@ -1,5 +1,6 @@
 const { extractTextFromPdf } = require('../services/pdfExtractor');
 const { translateText } = require('../services/azureTranslator');
+const TranslatedPdf = require('../models/TranslatedPdf');
 
 async function translatePdf(req, res, next) {
   const { targetLanguage } = req.body;
@@ -26,5 +27,11 @@ async function translatePdf(req, res, next) {
     next(error);
   }
 }
+
+await TranslatedPdf.create({
+  userId: req.auth.userId,
+  fileName: req.file.originalname,
+  translatedText
+});
 
 module.exports = { translatePdf };
