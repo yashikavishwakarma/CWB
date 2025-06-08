@@ -14,11 +14,21 @@ const generateQuiz = async (req, res) => {
         messages: [
           {
             role: "system",
-            content: "You are an AI assistant that creates educational multiple-choice quizzes."
+            content: "You are an AI assistant that creates educational multiple-choice quizzes. ALWAYS respond with JSON only, no extra text or explanation."
           },
           {
             role: "user",
-            content: `Create 5 multiple-choice questions on the topic "${topic}". Each question should have 4 options and indicate the correct answer. The questions should be written in ${language}. Return the quiz in a clearly formatted readable manner.`
+            content: `Create 5 multiple-choice questions on the topic "${topic}". Each question should have 4 options and indicate the correct answer by returning a JSON array like this:
+
+[
+  {
+    "question": "Question text here",
+    "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+    "correctAnswerIndex": 0
+  }
+]
+
+Return ONLY the JSON array, no extra text. The questions should be in ${language}.`
           }
         ],
         max_tokens: 800,
@@ -32,8 +42,29 @@ const generateQuiz = async (req, res) => {
       }
     );
 
-    const quizText = response.data.choices[0].message.content;
-    res.json({ quiz: quizText });
+    const quizTextRaw = response.data.choices[0].message.content;
+
+    // Extract JSON array substring from the response text
+    const jsonMatch = quizTextRaw.match(/\[.*\]/s);
+
+    if (!jsonMatch) {
+      console.error("Failed to extract JSON from AI response:", quizTextRaw);
+      return res.status(500).json({ error: "Failed to extract quiz JSON from AI response" });
+    }
+
+    const quizJsonStr = jsonMatch[0];
+
+    // Optionally parse here to verify
+    let quizJson;
+    try {
+      quizJson = JSON.parse(quizJsonStr);
+    } catch (parseErr) {
+      console.error("Failed to parse extracted quiz JSON:", parseErr);
+      return res.status(500).json({ error: "Failed to parse quiz JSON" });
+    }
+
+    res.json({ quiz: quizJson });  // Send parsed JSON object to frontend
+
   } catch (error) {
     console.error("Error generating quiz:", error.response?.data || error.message);
     res.status(500).json({ error: "Failed to generate quiz" });

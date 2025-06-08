@@ -15,6 +15,7 @@ async function translateVideoTranscript(req, res, next) {
       return res.status(404).json({ error: 'No transcript available for this video' });
     }
 
+    // Translate each chunk's text concurrently
     const translatedTranscript = await Promise.all(
       transcript.map(async (chunk) => {
         const translatedText = await translateText(chunk.text, targetLanguage);
@@ -27,6 +28,7 @@ async function translateVideoTranscript(req, res, next) {
 
     res.json({ translatedTranscript });
   } catch (error) {
+    console.error('Error in translateVideoTranscript:', error);
     next(error);
   }
 }

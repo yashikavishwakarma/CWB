@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { ClerkExpressWithAuth } = require('@clerk/clerk-sdk-node');
-const connectDB = require('./config/db');
+// const connectDB = require('./config/db');
 const pdfRoutes = require('./routes/pdfRoutes');
 
 const translateRoutes = require('./routes/translateRoutes');
@@ -30,12 +30,12 @@ app.get('/api/dashboard', (req, res) => {
 // 👇 Your existing routes
 app.use('/api', translateRoutes);
 
-app.use('/api/pdfs', pdfRoutes);
+// app.use('/api/pdfs', pdfRoutes);
 
 // 👇 Error handler
 app.use(errorHandler);
 
-connectDB();
+// connectDB();
 
 // Start server
 const PORT = process.env.PORT || 3000;
