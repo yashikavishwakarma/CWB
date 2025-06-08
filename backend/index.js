@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const { ClerkExpressWithAuth } = require('@clerk/clerk-sdk-node');
 // const connectDB = require('./config/db');
-const pdfRoutes = require('./routes/pdfRoutes');
+// const pdfRoutes = require('./routes/pdfRoutes');
 
 const translateRoutes = require('./routes/translateRoutes');
 const errorHandler = require('./middlewares/errorHandler');

@@ -14,7 +14,7 @@ const features = [
     title: 'YouTube Simplifier', 
     path: '/youtube-content',
     icon: '🎬',
-    description: 'Extract key insights from lengthy videos in seconds',
+    description: 'Extract key insights ',
     color: 'from-amber-400 to-orange-500'
   },
   { 
@@ -59,7 +59,7 @@ export default function LandingPage() {
         <div className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16 lg:py-24">
           <div className="max-w-2xl">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
-              TripleW <span className="">Learn</span>,<br/>
+              TripleW <span className="">Learn</span>-<br/>
                <span className="text-cyan-500">Whenever, Wherever, Whatever</span>
             </h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -258,20 +258,10 @@ export default function LandingPage() {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2">
-                <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-                <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
-              </ul>
+              
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2">
-                <li><Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-              </ul>
+              
             </div>
           </div>
           <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">

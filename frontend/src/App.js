@@ -8,6 +8,7 @@ import PdfTranslation from './pages/PdfTranslation';
 import YoutubeContent from './pages/YoutubeContent';
 import AIBuddy from './pages/AIBuddy';
 import QuizGeneration from './pages/QuizGeneration';
+import Dashboard from './pages/Dashboard';
 
 import RequireAuth from './components/RequireAuth';  // import the new wrapper
 
@@ -49,6 +50,14 @@ function App() {
             element={
               <RequireAuth>
                 <QuizGeneration />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+                <Dashboard />
               </RequireAuth>
             }
           />

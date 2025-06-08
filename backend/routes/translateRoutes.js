@@ -14,6 +14,5 @@ router.post('/translate', translateVideoTranscript);
 router.post('/translate-pdf', upload.single('pdfFile'), translatePdf);
 router.post('/generate-quiz', generateQuiz);
 router.post('/buddy-chat', buddyChat);
-router.get('/user-pdfs', getUserPdfs);
 
 module.exports = router;
